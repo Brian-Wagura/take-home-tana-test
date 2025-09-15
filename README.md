@@ -16,3 +16,19 @@ Steps:
 #### Complexity:
 - Time: O(n * m) (where n = number of strings, m = average string length).
 - Space: O(k) (where k = number of valid characters).
+
+## Question2 solution description
+The algorithm finds the first product in an array that occurs only once.
+If none, return null.
+
+Steps:
+- Use a HashMap to count occurrences of each product.
+    - Increment count if product already exists.
+    - Otherwise, initialize count to 1.
+- Iterate through the array again.
+    - Return the first product with a count of 1.
+- If none, return null.
+
+#### Complexity:
+- Time: O(n) (one pass to count, one pass to find the first unique).
+- Space: O(n) (map stores counts of all unique products).
