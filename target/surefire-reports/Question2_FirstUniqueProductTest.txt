@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
-Test set: Question1_GetLongestStringTest
+Test set: Question2_FirstUniqueProductTest
 -------------------------------------------------------------------------------
-Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.121 s -- in Question1_GetLongestStringTest
+Tests run: 10, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.061 s -- in Question2_FirstUniqueProductTest
