@@ -12,8 +12,8 @@
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <!-- <exec.mainClass>Question1_GetLongestString</exec.mainClass> -->
-        <exec.mainClass>Question2_FirstUniqueProduct</exec.mainClass>
+        <exec.mainClass>Question1_GetLongestString</exec.mainClass>
+        <!-- <exec.mainClass>Question2_FirstUniqueProduct</exec.mainClass> -->
         <!-- <exec.mainClass>Question3_ClosestMinDistance</exec.mainClass>
         <exec.mainClass>Question4_TopThreeWords</exec.mainClass>
         <exec.mainClass>Question5_LinkedList</exec.mainClass> -->
