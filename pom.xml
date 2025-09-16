@@ -4,7 +4,7 @@
                              http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.example</groupId>
+    <groupId>com.tanatest</groupId>
     <artifactId>take-home-tana-test</artifactId>
     <version>1.0-SNAPSHOT</version>
 
@@ -12,6 +12,11 @@
         <maven.compiler.source>21</maven.compiler.source>
         <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <!-- <exec.mainClass>Question1_GetLongestString</exec.mainClass> -->
+        <exec.mainClass>Question2_FirstUniqueProduct</exec.mainClass>
+        <!-- <exec.mainClass>Question3_ClosestMinDistance</exec.mainClass>
+        <exec.mainClass>Question4_TopThreeWords</exec.mainClass>
+        <exec.mainClass>Question5_LinkedList</exec.mainClass> -->
     </properties>
 
     <dependencies>
@@ -26,6 +31,14 @@
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>3.1.0</version>
+                <configuration>
+                    <mainClass>${exec.mainClass}</mainClass>
+                </configuration>
+            </plugin>
             <!-- Maven Surefire plugin runs JUnit 5 tests -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

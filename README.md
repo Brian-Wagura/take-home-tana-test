@@ -1,81 +1,115 @@
 # Tufin Technical Assessment
 
-## Question1 solution description
-The algorithm finds the longest valid string from a list of validstring candidates based on two rules:
-The string can only use characters from the given list of valid characters.
-The string cannot contain consecutive identical characters (e.g., "AAB" is invalid).
+## Prerequisites
+- Java 21
+- Maven
 
-Steps:
-- Convert the valid characters into a HashSet for O(1) lookup.
-- Iterate through each candidate valid string:
-    - Check if all its characters are valid.
-    - Ensure no consecutive duplicates.
-    - If valid and longer than the previously found valid string, update the result.
-- Return the longest valid string, or an empty string if none are valid.
+## Setup
+```bash
+git clone https://github.com/Brian-Wagura/take-home-tana-test.git
+cd take-home-tana-test
+mvn clean install
+```
 
-#### Complexity:
-- Time: O(n * m) (where n = number of strings, m = average string length).
-- Space: O(k) (where k = number of valid characters).
+## Maven Configuration
+The project is configured with the Maven Exec Plugin for easy execution of individual solutions. The default main class is set to `Question1_GetLongestString` in `pom.xml`:
 
-## Question2 solution description
-The algorithm finds the first product in an array that occurs only once.
-If none, return null.
+```xml
+<properties>
+    <maven.compiler.source>21</maven.compiler.source>
+    <maven.compiler.target>21</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <exec.mainClass>Question1_GetLongestString</exec.mainClass>
+</properties>
+```
 
-Steps:
-- Use a HashMap to count occurrences of each product.
-    - Increment count if product already exists.
-    - Otherwise, initialize count to 1.
-- Iterate through the array again.
-    - Return the first product with a count of 1.
-- If none, return null.
+## Running the Project
 
-#### Complexity:
-- Time: O(n) (one pass to count, one pass to find the first unique).
-- Space: O(n) (map stores counts of all unique products).
+### Run All Tests
+```bash
+mvn test
+```
 
-## Question3 solution description
-The algorithm finds the closest minimum distance between the first occurrences of the minimum value in an array.
+### Run Individual Solutions
 
-Steps:
-- Find the minimum value in the array.
-    - Iterate through the array and keep track of the minimum value.
-- Iterate through the array again.
-    - Keep track of the first occurrence of the minimum value.
-    - Calculate the distance between the first occurrence and the current occurrence.
-- Return the closest minimum distance.
+#### Run Default (Question 1)
+```bash
+mvn exec:java
+```
 
-#### Complexity:
-- Time: O(n) (one pass to find the minimum, one pass to find the closest minimum distance).
-- Space: O(1) (only variables for tracking minimum value, last index, and closest distance).
+#### Change Default Main Class
+To change the default main class, update the `pom.xml` file. **Important**: Only one `exec.mainClass` property should be uncommented at a time. Comment out all other `exec.mainClass` properties.
 
+```xml
+<properties>
+    <maven.compiler.source>21</maven.compiler.source>
+    <maven.compiler.target>21</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    
+    <!-- Only keep ONE of these uncommented at a time -->
+    <!-- <exec.mainClass>Question1_GetLongestString</exec.mainClass> -->
+    <exec.mainClass>Question2_FirstUniqueProduct</exec.mainClass>
+    <!-- <exec.mainClass>Question3_ClosestMinDistance</exec.mainClass> -->
+    <!-- <exec.mainClass>Question4_TopThreeWords</exec.mainClass> -->
+    <!-- <exec.mainClass>Question5_LinkedList</exec.mainClass> -->
+</properties>
+```
 
-## Question4 solution description
-The algorithm finds the top three most frequent words in a given sentence.
+#### Run Specific Question
+```bash
+# Question 1: Find Longest Valid String
+mvn exec:java -Dexec.mainClass="Question1_GetLongestString"
 
-Steps:
-- Split the sentence into words.
-- Use a HashMap to count occurrences of each word.
-- Sort the words by frequency and alphabetically.
-- Return the top three words.
+# Question 2: Find First Unique Product
+mvn exec:java -Dexec.mainClass="Question2_FirstUniqueProduct"
 
-#### Complexity:
-- Time: O(n log n) (Due to sorting the word frequencies).
-- Space: O(n) (for storing word counts and sorting).
+# Question 3: Find Closest Minimum Distance
+mvn exec:java -Dexec.mainClass="Question3_ClosestMinDistance"
 
-## Question5 solution description
+# Question 4: Find Top Three Words
+mvn exec:java -Dexec.mainClass="Question4_TopThreeWords"
 
-The algorithm rotates a linked list to the right by n positions.
-
-Steps:
-- Find the length of the linked list.
-- Make the linked list circular.
-- Find the new tail.
-- Break the circle.
-
-#### Complexity:
-- Time: O(n) (one pass to find the length, one pass to make the circle, one pass to find the new tail, one pass to break the circle).
-- Space: O(1) (only variables for tracking length, tail, and new tail).
+# Question 5: Rotate Linked List
+mvn exec:java -Dexec.mainClass="Question5_LinkedList"
+```
 
 
 
+## Solutions
 
+### Question 1: Longest Valid String
+Finds the longest valid string from a list of candidates based on:
+- Only using characters from a given valid set
+- No consecutive identical characters
+
+**Complexity:**
+- Time: O(n * m) - n strings with average length m
+- Space: O(k) - k unique valid characters
+
+### Question 2: First Unique Product
+Finds the first product in an array that occurs only once.
+
+**Complexity:**
+- Time: O(n)
+- Space: O(n)
+
+### Question 3: Closest Minimum Distance
+Finds the closest distance between two occurrences of the minimum value.
+
+**Complexity:**
+- Time: O(n)
+- Space: O(1)
+
+### Question 4: Top Three Words
+Finds the three most frequent words in a sentence.
+
+**Complexity:**
+- Time: O(n log n)
+- Space: O(n)
+
+### Question 5: Rotate Linked List
+Rotates a linked list to the right by n positions.
+
+**Complexity:**
+- Time: O(n)
+- Space: O(1)
