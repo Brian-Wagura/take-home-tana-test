@@ -49,3 +49,15 @@ Steps:
 - Space: O(1) (only variables for tracking minimum value, last index, and closest distance).
 
 
+## Question4 solution description
+The algorithm finds the top three most frequent words in a given sentence.
+
+Steps:
+- Split the sentence into words.
+- Use a HashMap to count occurrences of each word.
+- Sort the words by frequency and alphabetically.
+- Return the top three words.
+
+#### Complexity:
+- Time: O(n log n) (Due to sorting the word frequencies).
+- Space: O(n) (for storing word counts and sorting).
