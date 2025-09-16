@@ -57,39 +57,78 @@ To change the default main class, update the `pom.xml` file. **Important**: Only
 
 ## Solutions
 
-### Question 1: Longest Valid String
-Finds the longest valid string from a list of candidates based on:
-- Only using characters from a given valid set
-- No consecutive identical characters
+## Question1 solution description
+The algorithm finds the longest valid string from a list of validstring candidates based on two rules:
+The string can only use characters from the given list of valid characters.
+The string cannot contain consecutive identical characters (e.g., "AAB" is invalid).
 
-**Complexity:**
-- Time: O(n * m) - n strings with average length m
-- Space: O(k) - k unique valid characters
+Steps:
+- Convert the valid characters into a HashSet for O(1) lookup.
+- Iterate through each candidate valid string:
+    - Check if all its characters are valid.
+    - Ensure no consecutive duplicates.
+    - If valid and longer than the previously found valid string, update the result.
+- Return the longest valid string, or an empty string if none are valid.
 
-### Question 2: First Unique Product
-Finds the first product in an array that occurs only once.
+#### Complexity:
+- Time: O(n * m) (where n = number of strings, m = average string length).
+- Space: O(k) (where k = number of valid characters).
 
-**Complexity:**
-- Time: O(n)
-- Space: O(n)
+## Question2 solution description
+The algorithm finds the first product in an array that occurs only once.
+If none, return null.
 
-### Question 3: Closest Minimum Distance
-Finds the closest distance between two occurrences of the minimum value.
+Steps:
+- Use a HashMap to count occurrences of each product.
+    - Increment count if product already exists.
+    - Otherwise, initialize count to 1.
+- Iterate through the array again.
+    - Return the first product with a count of 1.
+- If none, return null.
 
-**Complexity:**
-- Time: O(n)
-- Space: O(1)
+#### Complexity:
+- Time: O(n) (one pass to count, one pass to find the first unique).
+- Space: O(n) (map stores counts of all unique products).
 
-### Question 4: Top Three Words
-Finds the three most frequent words in a sentence.
+## Question3 solution description
+The algorithm finds the closest minimum distance between the first occurrences of the minimum value in an array.
 
-**Complexity:**
-- Time: O(n log n)
-- Space: O(n)
+Steps:
+- Find the minimum value in the array.
+    - Iterate through the array and keep track of the minimum value.
+- Iterate through the array again.
+    - Keep track of the first occurrence of the minimum value.
+    - Calculate the distance between the first occurrence and the current occurrence.
+- Return the closest minimum distance.
 
-### Question 5: Rotate Linked List
-Rotates a linked list to the right by n positions.
+#### Complexity:
+- Time: O(n) (one pass to find the minimum, one pass to find the closest minimum distance).
+- Space: O(1) (only variables for tracking minimum value, last index, and closest distance).
 
-**Complexity:**
-- Time: O(n)
-- Space: O(1)
+
+## Question4 solution description
+The algorithm finds the top three most frequent words in a given sentence.
+
+Steps:
+- Split the sentence into words.
+- Use a HashMap to count occurrences of each word.
+- Sort the words by frequency and alphabetically.
+- Return the top three words.
+
+#### Complexity:
+- Time: O(n log n) (Due to sorting the word frequencies).
+- Space: O(n) (for storing word counts and sorting).
+
+## Question5 solution description
+
+The algorithm rotates a linked list to the right by n positions.
+
+Steps:
+- Find the length of the linked list.
+- Make the linked list circular.
+- Find the new tail.
+- Break the circle.
+
+#### Complexity:
+- Time: O(n) (one pass to find the length, one pass to make the circle, one pass to find the new tail, one pass to break the circle).
+- Space: O(1) (only variables for tracking length, tail, and new tail).
