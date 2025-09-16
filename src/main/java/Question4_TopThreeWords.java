@@ -34,4 +34,12 @@ public class Question4_TopThreeWords {
         Collections.sort(topThreeWords);
         return topThreeWords;
     }
+
+    public static void main(String[] args) {
+        String input = "hi there care to discuss algorithm basis or how to solve algorithm or";
+        System.out.println("Input: " + input);
+
+        List<String> result = getTopThreeWords(input);
+        System.out.println("Top 3 words (alphabetical): " + result);
+    }
 }

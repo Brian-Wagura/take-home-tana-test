@@ -67,4 +67,20 @@ public class Question1_GetLongestString {
 		return true;
 		
 	}
+
+	public static void main(String[] args) {
+        String validCharacters = "ABCD";
+        List<String> candidates = Arrays.asList(
+            "AABCDA",      // invalid: consecutive 'AA'
+            "ABCDZADC",    // invalid: contains 'Z'
+            "ABCDBCA",     // valid
+            "ABCDABDCA"    // valid and longest
+        );
+
+        String result = getLongestString(validCharacters, candidates);
+
+        System.out.println("Valid characters: " + validCharacters);
+        System.out.println("Candidate strings: " + candidates);
+        System.out.println("Longest valid string: " + result);
+    }
 }

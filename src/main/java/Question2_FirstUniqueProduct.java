@@ -35,5 +35,13 @@ public class Question2_FirstUniqueProduct {
         }
         return null;  // No unique product found
     }
+
+    public static void main(String[] args) {
+        String[] products = { "Apple", "Computer", "Apple", "Bag" };
+
+        System.out.println("Input products: " + Arrays.toString(products));
+        String unique = firstUniqueProduct(products);
+        System.out.println("First unique product: " + unique);
+    }
     
 }

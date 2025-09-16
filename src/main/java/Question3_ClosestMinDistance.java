@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Question3_ClosestMinDistance {
 
     /**
@@ -33,6 +35,14 @@ public class Question3_ClosestMinDistance {
             }
         }
         return closestMinDistance;
+    }
+
+    public static void main(String[] args) {
+        int[] nums = {1, 2, 3, 1, 4, 5, 2};
+
+        System.out.println("Input array: " + Arrays.toString(nums));
+        int distance = findClosestMinDistance(nums);
+        System.out.println("Closest minimum distance: " + distance);
     }
     
 }

@@ -61,3 +61,21 @@ Steps:
 #### Complexity:
 - Time: O(n log n) (Due to sorting the word frequencies).
 - Space: O(n) (for storing word counts and sorting).
+
+## Question5 solution description
+
+The algorithm rotates a linked list to the right by n positions.
+
+Steps:
+- Find the length of the linked list.
+- Make the linked list circular.
+- Find the new tail.
+- Break the circle.
+
+#### Complexity:
+- Time: O(n) (one pass to find the length, one pass to make the circle, one pass to find the new tail, one pass to break the circle).
+- Space: O(1) (only variables for tracking length, tail, and new tail).
+
+
+
+
