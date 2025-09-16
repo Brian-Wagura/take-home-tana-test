@@ -32,3 +32,20 @@ Steps:
 #### Complexity:
 - Time: O(n) (one pass to count, one pass to find the first unique).
 - Space: O(n) (map stores counts of all unique products).
+
+## Question3 solution description
+The algorithm finds the closest minimum distance between the first occurrences of the minimum value in an array.
+
+Steps:
+- Find the minimum value in the array.
+    - Iterate through the array and keep track of the minimum value.
+- Iterate through the array again.
+    - Keep track of the first occurrence of the minimum value.
+    - Calculate the distance between the first occurrence and the current occurrence.
+- Return the closest minimum distance.
+
+#### Complexity:
+- Time: O(n) (one pass to find the minimum, one pass to find the closest minimum distance).
+- Space: O(1) (only variables for tracking minimum value, last index, and closest distance).
+
+
