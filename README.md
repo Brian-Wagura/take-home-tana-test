@@ -8,7 +8,6 @@
 ```bash
 git clone https://github.com/Brian-Wagura/take-home-tana-test.git
 cd take-home-tana-test
-mvn clean install
 ```
 
 ## Maven Configuration
