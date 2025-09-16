@@ -55,26 +55,6 @@ To change the default main class, update the `pom.xml` file. **Important**: Only
 </properties>
 ```
 
-#### Run Specific Question
-```bash
-# Question 1: Find Longest Valid String
-mvn exec:java -Dexec.mainClass="Question1_GetLongestString"
-
-# Question 2: Find First Unique Product
-mvn exec:java -Dexec.mainClass="Question2_FirstUniqueProduct"
-
-# Question 3: Find Closest Minimum Distance
-mvn exec:java -Dexec.mainClass="Question3_ClosestMinDistance"
-
-# Question 4: Find Top Three Words
-mvn exec:java -Dexec.mainClass="Question4_TopThreeWords"
-
-# Question 5: Rotate Linked List
-mvn exec:java -Dexec.mainClass="Question5_LinkedList"
-```
-
-
-
 ## Solutions
 
 ### Question 1: Longest Valid String
