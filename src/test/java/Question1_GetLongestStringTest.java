@@ -7,48 +7,56 @@ public class Question1_GetLongestStringTest {
 
     private final String validChars = "ABCD";
 
+    // 1. Mixed valid and invalid strings, find longest valid
     @Test
     public void testValidLongestString() {
         List<String> strings = Arrays.asList("AABCDA", "ABCDZADC", "ABCDBCA", "ABCDABDCA");
         assertEquals("ABCDABDCA", Question1_GetLongestString.getLongestString(validChars, strings));
     }
 
+    // 2. All strings have repeated characters
     @Test
     public void testAllInvalidDueToRepetition() {
         List<String> strings = Arrays.asList("AAAA", "BBBB", "CCCC");
         assertEquals("", Question1_GetLongestString.getLongestString(validChars, strings));
     }
 
+    // 3. Mixed invalid and single valid character
     @Test
     public void testInvalidChars() {
         List<String> strings = Arrays.asList("XYZ", "PQ", "A");
         assertEquals("A", Question1_GetLongestString.getLongestString(validChars, strings));
     }
 
+    // 4. Multiple valid strings with same length, return first occurrence
     @Test
     public void testMultipleValidSameLength() {
         List<String> strings = Arrays.asList("ABCD", "ABDC", "DCBA");
         assertEquals("ABCD", Question1_GetLongestString.getLongestString(validChars, strings));
     }
 
+    // 5. Empty input list
     @Test
     public void testEmptyList() {
         List<String> strings = Collections.emptyList();
         assertEquals("", Question1_GetLongestString.getLongestString(validChars, strings));
     }
 
+    // 6. String longer than valid character set
     @Test
     public void testStringLongerThanValidSet() {
         List<String> strings = Arrays.asList("A", "AB", "ABC", "ABCD", "ABCDE");
         assertEquals("ABCD", Question1_GetLongestString.getLongestString(validChars, strings));
     }
 
+    // 7. Mixed valid and invalid strings with different patterns
     @Test
     public void testMixedValidStrings() {
         List<String> strings = Arrays.asList("AB", "ABA", "ABCA", "ABCDAB");
         assertEquals("ABCDAB", Question1_GetLongestString.getLongestString(validChars, strings));
     }
 
+    // 8. Single valid character string
     @Test
     void testSingleValidCharacter() {
         List<String> strings = Arrays.asList("A");
